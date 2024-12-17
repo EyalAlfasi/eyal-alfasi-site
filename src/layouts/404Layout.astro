@@ -1,0 +1,26 @@
+---
+import Head from '@components/Head.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import { SITE, NOT_FOUND } from '@consts';
+import Container from '@components/Container.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head
+      title={`${NOT_FOUND.TITLE} | ${SITE.NAME}`}
+      description={NOT_FOUND.DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Container>
+        <slot />
+      </Container>
+    </main>
+    <Footer />
+  </body>
+</html>
