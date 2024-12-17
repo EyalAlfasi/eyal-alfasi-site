@@ -1,5 +1,5 @@
 ---
-company: 'Unity (Supersonic Studios)'
+company: 'Unity, Supersonic Studios'
 role: 'Full Stack Engineer'
 dateStart: '07/01/2022'
 dateEnd: '12/01/2024'
@@ -12,6 +12,7 @@ technologies:
     'NestJS',
     'Postgres',
     'Docker',
+    'Microservices',
     'Storybook',
     'Webpack',
   ]

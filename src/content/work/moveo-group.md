@@ -1,6 +1,6 @@
 ---
 company: 'Moveo Group'
-role: 'Full Stack Developer'
+role: 'Full Stack Engineer'
 dateStart: '06/01/2021'
 dateEnd: '07/01/2022'
 technologies:
