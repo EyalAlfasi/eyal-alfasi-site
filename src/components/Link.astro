@@ -6,6 +6,7 @@ type Props = {
   external?: boolean;
   underline?: boolean;
   class?: string;
+  ariaLabel?: string;
 };
 
 const {
@@ -13,6 +14,7 @@ const {
   external,
   underline = true,
   class: className,
+  ariaLabel,
   ...rest
 } = Astro.props;
 ---
@@ -25,6 +27,7 @@ const {
     underline && 'underline underline-offset-2',
     className
   )}
+  aria-label={ariaLabel}
   {...rest}
 >
   <slot />
