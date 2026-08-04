@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import PageLayout from '@layouts/PageLayout.astro';
 import Container from '@components/Container.astro';
 import { dateRange } from '@lib/utils';
-import { WORK } from '@consts';
-import Pill from '@components/Pill.astro';
+import { WORK, SITE } from '@consts';
+
 const collection = (await getCollection('work')).sort(
   (a, b) =>
     new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf()
@@ -16,42 +16,52 @@ const work = await Promise.all(
     return { ...item, Content };
   })
 );
-console.log(work);
 ---
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <Container>
-    <div class="space-y-10">
-      <div class="animate font-semibold text-black dark:text-white">Work</div>
-      <ul class="flex flex-col space-y-4">
-        {
-          work.map((entry) => (
-            <li class="animate">
-              <div class="text-sm opacity-75">
+    <section class="page-hero animate">
+      <div>
+        <p class="section-kicker">Experience</p>
+        <h1 class="page-title">A career spent making complex products simpler.</h1>
+      </div>
+      <p class="page-intro">
+        I’ve worked across startups and global product teams, moving between
+        frontend, backend, and the decisions that connect them. The common thread
+        is end-to-end ownership and software that remains useful after launch.
+      </p>
+    </section>
+
+    <ol class="work-timeline">
+      {
+        work.map((entry) => (
+          <li class="work-item animate">
+            <div>
+              <div class="work-period">
                 {dateRange(entry.data.dateStart, entry.data.dateEnd)}
               </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">{entry.data.role}</div>
-              <article>
+              <h2 class="work-company">{entry.data.company}</h2>
+              <p class="work-role">{entry.data.role}</p>
+            </div>
+            <div>
+              <article class="work-content">
                 <entry.Content />
               </article>
-              <ul class="mt-2 flex flex-wrap gap-2">
-                {entry.data.technologies.map((tech) => (
-                  <li>
-                    <Pill>{tech}</Pill>
-                  </li>
-                ))}
+              <ul class="pill-list" aria-label={`Technologies used at ${entry.data.company}`}>
+                {entry.data.technologies.map((tech) => <li>{tech}</li>)}
               </ul>
-            </li>
-          ))
-        }
-      </ul>
-      <!-- 
-      <ul class="animate flex flex-col gap-4">
+            </div>
+          </li>
+        ))
+      }
+    </ol>
 
-      </ul> -->
-    </div>
+    <section class="contact-section animate" aria-labelledby="work-contact-title">
+      <div>
+        <p class="section-kicker">Start a conversation</p>
+        <h2 id="work-contact-title">Want to compare notes?</h2>
+      </div>
+      <a href={`mailto:${SITE.EMAIL}`}>{SITE.EMAIL} <span aria-hidden="true">↗</span></a>
+    </section>
   </Container>
 </PageLayout>

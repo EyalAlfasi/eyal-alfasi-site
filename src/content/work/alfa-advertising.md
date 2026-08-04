@@ -6,4 +6,4 @@ dateEnd: '06/01/2021'
 technologies: ['WordPress', 'PHP', 'HTML', 'CSS', 'JavaScript']
 ---
 
-Designed, developed, and maintained responsive, pixel-perfect business and e-commerce websites using WordPress, delivering high-quality solutions tailored to client needs.
+Designed and delivered responsive business and e-commerce websites for a range of clients, building the practical product and client skills that shaped my move into full-stack engineering.

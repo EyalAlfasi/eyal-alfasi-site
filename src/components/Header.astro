@@ -1,27 +1,67 @@
 ---
 import Container from '@components/Container.astro';
-import Link from '@components/Link.astro';
 import Logo from './Logo.astro';
 ---
 
 <header id="header">
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link
-        href="/"
-        underline={false}
-        class="dark:text-[#F0F0F0] text-[#070D0D]"
-        ariaLabel="Home"
-      >
-        <Logo height={40} />
-      </Link>
-      <nav class="flex gap-1">
-        <Link href="/blog"> blog </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work"> work </Link>
+    <div class="header-inner">
+      <a class="brand-link" href="/" aria-label="Eyal Alfasi, home">
+        <Logo class="brand-logo" />
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/#about"><span class="nav-number">01.</span> About</a>
+        <a href="/#experience"><span class="nav-number">02.</span> Experience</a>
+        <a href="/#work"><span class="nav-number">03.</span> Work</a>
+        <a href="/#contact"><span class="nav-number">04.</span> Contact</a>
       </nav>
+      <a
+        class="header-contact"
+        href="/eyal-alfasi-resume.pdf"
+        download
+        aria-label="Download Eyal Alfasi's résumé"
+      >
+        Resume
+      </a>
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </Container>
 </header>
+
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true" inert>
+  <button
+    id="mobile-menu-backdrop"
+    class="mobile-menu-backdrop"
+    type="button"
+    aria-label="Close menu"
+  ></button>
+  <aside class="mobile-menu-panel" aria-label="Mobile navigation">
+    <nav>
+      <ol>
+        <li><a href="/#about"><span>01.</span> About</a></li>
+        <li><a href="/#experience"><span>02.</span> Experience</a></li>
+        <li><a href="/#work"><span>03.</span> Work</a></li>
+        <li><a href="/#contact"><span>04.</span> Contact</a></li>
+      </ol>
+      <a
+        class="mobile-history-link"
+        href="/eyal-alfasi-resume.pdf"
+        download
+        aria-label="Download Eyal Alfasi's résumé"
+      >
+        Download résumé
+      </a>
+    </nav>
+  </aside>
+</div>

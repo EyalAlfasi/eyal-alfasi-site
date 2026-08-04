@@ -8,8 +8,9 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: 'Home',
-  DESCRIPTION: "This is Eyal Alfasi's personal website.",
+  TITLE: '',
+  DESCRIPTION:
+    'Eyal Alfasi is a senior full-stack engineer building durable product experiences across React, TypeScript, Node.js, and AWS.',
 };
 
 export const BLOG: Metadata = {
@@ -18,8 +19,9 @@ export const BLOG: Metadata = {
 };
 
 export const WORK: Metadata = {
-  TITLE: 'Work',
-  DESCRIPTION: 'Where I have worked and what I have done.',
+  TITLE: 'Experience',
+  DESCRIPTION:
+    'Eyal Alfasi’s professional experience across product engineering, frontend infrastructure, and backend systems.',
 };
 
 export const NOT_FOUND: Metadata = {

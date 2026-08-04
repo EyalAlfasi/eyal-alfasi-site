@@ -18,7 +18,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/nano.png' } = Astro.props;
+const { title, description, image = '/og.png' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -52,6 +52,8 @@ const { title, description, image = '/nano.png' } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="theme-color" content="#f2f1ed" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -84,7 +86,20 @@ const { title, description, image = '/nano.png' } = Astro.props;
   function init() {
     preloadTheme();
     onScroll();
-    animate();
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      setMenuOpen(!isOpen);
+    });
+
+    menuBackdrop?.addEventListener('click', () => setMenuOpen(false));
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuOpen(false, false));
+    });
 
     const backToTop = document.getElementById('back-to-top');
     backToTop?.addEventListener('click', (event) => scrollToTop(event));
@@ -121,21 +136,30 @@ const { title, description, image = '/nano.png' } = Astro.props;
     document.addEventListener('scroll', onScroll);
   }
 
-  function animate() {
-    const animateElements = document.querySelectorAll('.animate');
-
-    animateElements.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add('show');
-      }, index * 50);
-    });
-  }
-
   function onScroll() {
     if (window.scrollY > 0) {
       document.documentElement.classList.add('scrolled');
     } else {
       document.documentElement.classList.remove('scrolled');
+    }
+  }
+
+  function setMenuOpen(open, restoreFocus = true) {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (!menuToggle || !mobileMenu) return;
+
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    mobileMenu.inert = !open;
+    document.documentElement.classList.toggle('menu-open', open);
+
+    if (open) {
+      mobileMenu.querySelector('a')?.focus();
+    } else if (restoreFocus) {
+      menuToggle.focus();
     }
   }
 
@@ -187,5 +211,8 @@ const { title, description, image = '/nano.png' } = Astro.props;
 
   document.addEventListener('DOMContentLoaded', () => init());
   document.addEventListener('astro:after-swap', () => init());
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenuOpen(false);
+  });
   preloadTheme();
 </script>
