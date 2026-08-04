@@ -96,6 +96,10 @@ html.scrolled header {
   height: auto;
 }
 
+.brand-logo-mark {
+  display: none;
+}
+
 header nav {
   display: flex;
   align-items: center;
@@ -1038,6 +1042,15 @@ html.scrolled #back-to-top {
     display: none;
   }
 
+  .brand-logo-full {
+    display: none;
+  }
+
+  .brand-logo-mark {
+    display: block;
+    width: 2.45rem;
+  }
+
   .menu-toggle {
     position: relative;
     display: inline-flex;
@@ -1264,10 +1277,6 @@ html.scrolled #back-to-top {
 }
 
 @media (max-width: 540px) {
-  .brand-logo {
-    width: 5.5rem;
-  }
-
   .hero-reference h1,
   .hero-reference h2 {
     font-size: clamp(2.7rem, 12vw, 3.45rem);
@@ -1288,16 +1297,32 @@ html.scrolled #back-to-top {
   }
 
   .stack-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 1rem;
   }
 
   .about-side {
     grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
 
   .portrait-frame {
-    max-width: 18rem;
-    margin-bottom: 1.5rem;
+    width: min(62vw, 13.5rem);
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .portrait-frame::after {
+    transform: translate(0.55rem, 0.55rem);
+  }
+
+  .stack-panel {
+    padding-top: 1.35rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .stack-label {
+    margin-bottom: 0.9rem;
   }
 
   .hero-simple h1 {
