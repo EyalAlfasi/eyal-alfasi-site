@@ -6,4 +6,4 @@ dateEnd: 'Present'
 technologies: ['TypeScript', 'React', 'Node.js', 'PostgreSQL']
 ---
 
-Leading complex product initiatives across frontend and backend, partnering closely with product, design, and engineering. Focused on maintainable architecture, reusable foundations, and helping teams carry ambitious work from technical design through rollout.
+Working on web products across frontend and backend with TypeScript, React, Node.js, and PostgreSQL. I collaborate with product, design, and engineering from planning through release.

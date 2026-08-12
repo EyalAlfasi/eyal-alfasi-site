@@ -9,21 +9,21 @@ const experience = [
     role: 'Senior Full Stack Engineer',
     period: 'Aug 2025 - Present',
     summary:
-      'Leading complex product initiatives across frontend and backend, with a focus on maintainable architecture, shared foundations, and thoughtful delivery.',
+      'Working on web products across frontend and backend with TypeScript, React, Node.js, and PostgreSQL.',
   },
   {
     company: 'Unity',
     role: 'Full Stack Engineer',
     period: 'Jul 2022 - Dec 2024',
     summary:
-      'Built and evolved production software in a large engineering organization, working across product systems and reusable frontend infrastructure.',
+      'Worked on product features and shared frontend tools in a large engineering organization.',
   },
   {
     company: 'Moveo Software',
     role: 'Full Stack Engineer',
     period: 'Jun 2021 - Jul 2022',
     summary:
-      'Delivered end-to-end product work for fast-moving teams across several products, domains, and technology stacks.',
+      'Built frontend and backend features for several client products using different technology stacks.',
   },
 ];
 
@@ -57,12 +57,11 @@ const projectStack = [
     <section class="hero-reference animate" aria-labelledby="intro-title">
       <p class="hero-kicker">Hi, my name is</p>
       <h1 id="intro-title">Eyal Alfasi.</h1>
-      <h2>I build dependable software from end to end.</h2>
+      <h2>I build software for the web.</h2>
       <p>
-        I’m a senior full-stack engineer focused on building production products
-        that are clear, reliable, and maintainable. Currently, I’m working at
-        <strong>DoorLoop</strong>, where I lead projects across frontend and
-        backend.
+        I’m a senior full-stack engineer working across frontend and backend.
+        I’m currently at <strong>DoorLoop</strong>, where I help build and
+        maintain web products.
       </p>
       <a class="outline-button" href="#work">See what I’ve built</a>
     </section>
@@ -76,15 +75,14 @@ const projectStack = [
       <div class="about-reference">
         <div class="about-copy">
           <p>
-            I enjoy turning ambiguous product ideas into software that holds up
-            in production. I’m comfortable moving between product decisions,
-            interface details, backend systems, and the engineering work that
-            connects them.
+            Hello! I’m Eyal. I started out building WordPress websites and
+            gradually moved into full-stack product development. Since then,
+            I’ve worked at startups, software companies, and Unity.
           </p>
           <p>
-            I care about practical architecture, reusable foundations, and
-            taking ownership from the first technical decision through rollout
-            and iteration.
+            These days, I work mostly with TypeScript, React, Node.js, and
+            PostgreSQL. I enjoy working on both the interface people use and the
+            systems behind it.
           </p>
           <p>
             Away from work, I run, lift, and play tennis. I was also Israel’s
@@ -156,7 +154,7 @@ const projectStack = [
         <span class="heading-line"></span>
       </div>
       <article class="featured-project">
-        <p class="project-label">Featured independent product</p>
+        <p class="project-label">Independent project</p>
         <h3>
           <a
             href="https://facelessclip.eyalalfasi.com/"
@@ -167,9 +165,8 @@ const projectStack = [
           </a>
         </h3>
         <p class="project-description">
-          An AI video automation SaaS product I designed and built end to end,
-          owning the product, application, and production delivery from the
-          initial idea through launch.
+          FacelessClip is an AI video automation product I designed, built, and
+          launched independently.
         </p>
         <ul class="project-stack" aria-label="FacelessClip technologies">
           {projectStack.map((technology) => <li>{technology}</li>)}
@@ -182,11 +179,11 @@ const projectStack = [
       class="contact-reference animate"
       aria-labelledby="contact-title"
     >
-      <p>04. What’s next?</p>
+      <p>04. Contact</p>
       <h2 id="contact-title">Get in touch</h2>
       <span>
-        Whether you have a question, an interesting technical problem, or just
-        want to say hello, my inbox is open.
+        Whether you want to talk about software, ask a question, or just say
+        hello, feel free to email me.
       </span>
       <a class="outline-button" href={`mailto:${SITE.EMAIL}`}>Say hello</a>
       <ul aria-label="Social links">

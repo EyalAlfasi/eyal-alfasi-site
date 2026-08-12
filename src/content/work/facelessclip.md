@@ -14,4 +14,4 @@ technologies:
   ]
 ---
 
-Built an independent AI video automation product end to end, owning the product, application, and production delivery from the initial idea through launch.
+Designed, built, and launched FacelessClip, an independent AI video automation product.

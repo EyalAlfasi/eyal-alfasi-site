@@ -18,4 +18,4 @@ technologies:
   ]
 ---
 
-Worked across frontend and backend in a large product organization, helping teams ship complex workflows and strengthen shared engineering foundations. Contributed to reusable frontend infrastructure, dependable backend systems, and consistent React and TypeScript practices.
+Worked across frontend and backend on product features and internal engineering tools. I also contributed to shared React and TypeScript tooling.

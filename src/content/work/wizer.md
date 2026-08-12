@@ -6,4 +6,4 @@ dateEnd: '06/01/2021'
 technologies: ['React', 'NestJS', 'MongoDB']
 ---
 
-Delivered end-to-end product features in a fast-moving startup environment, working across the application stack and building a strong foundation in production product engineering.
+Built frontend and backend product features as part of a small startup team.

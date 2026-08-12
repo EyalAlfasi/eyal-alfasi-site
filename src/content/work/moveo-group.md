@@ -16,4 +16,4 @@ technologies:
   ]
 ---
 
-Delivered end-to-end work for fast-moving product teams, spanning complex web interfaces, backend services, and production software. Worked comfortably across different stacks and domains while taking ownership of features from problem definition to launch.
+Built frontend and backend features for several client products using React, Angular, Node.js, PostgreSQL, and MongoDB.
